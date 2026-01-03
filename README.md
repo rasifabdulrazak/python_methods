@@ -81,7 +81,7 @@ class Employee:
     @classmethod
     def from_string(cls, emp_string):
         """Create employee from CSV string"""
-        name, salary, date = emp_string.split('-')
+        name, salary, date = emp_string.split('-', max_split=2)
         return cls(name, float(salary), datetime.strptime(date, '%Y-%m-%d'))
     
     @classmethod
